@@ -4,6 +4,7 @@ set -eu
 rebuild_flag=false
 build_glog_flag=false
 build_gtest_flag=false
+build_raylib_flag=false
 build_kangaru_flag=false
 show_help=false
 build_target=""
@@ -26,6 +27,11 @@ do
         shift
         ;;
 
+        --raylib)
+        build_raylib_flag=true
+        shift
+        ;;
+
         --kangaru)
         build_kangaru_flag=true
         shift
@@ -34,6 +40,7 @@ do
         -a|--all)
         build_glog_flag=true
         build_gtest_flag=true
+        build_raylib_flag=true
         build_kangaru_flag=true
         shift
         ;;
@@ -91,6 +98,14 @@ if $build_gtest_flag ; then
         ./scripts/googletest.sh --rebuild
     else
         ./scripts/googletest.sh
+    fi
+fi
+
+if $build_raylib_flag ; then
+    if $rebuild_flag ; then
+        ./scripts/raylib.sh --rebuild
+    else
+        ./scripts/raylib.sh
     fi
 fi
 

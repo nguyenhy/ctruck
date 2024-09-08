@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(DinoTests)
+project(Ctruck/Tests)
 enable_testing()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_NAME}/bin")

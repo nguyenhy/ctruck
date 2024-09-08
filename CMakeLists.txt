@@ -19,6 +19,9 @@ include(${CMAKE_SOURCE_DIR}/lib/glog/build.cmake)
 message(STATUS "=====GTEST============")
 include(${CMAKE_SOURCE_DIR}/lib/googletest/build.cmake)
 
+message(STATUS "=====RAYLIB===========")
+include(${CMAKE_SOURCE_DIR}/lib/raylib/build.cmake)
+
 message(STATUS "=====kangaru===========")
 include(${CMAKE_SOURCE_DIR}/lib/kangaru/build.cmake)
 
